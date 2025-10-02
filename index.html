@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+        content="ALOHA Lightning enables fast, precise data collection and learned policies.">
   <meta name="keywords" content="ALOHA, Robotics, Manipulation, Learning, Fast">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ALOHA Lightning: Learning Fast and Precise Manipulation</title>
@@ -144,7 +144,7 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="75%">
@@ -156,13 +156,19 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="hero is-light is-small">
   <div class="hero-body">
-    <div class="container">
+    <div class="container is-fullhd">
       <div id="results-carousel" class="carousel results-carousel">
+         <div class="item item-battery">
+          <video poster="" id="battery" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/battery.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
         <div class="item item-cups">
           <video poster="" id="cups" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/cups.mp4"
@@ -182,6 +188,9 @@
           </video>
         </div>
       </div>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Aloha Lightning</span> learns precise, smooth, near-human speed policies. All videos are shown at 1x speed.
+      </h2>
     </div>
   </div>
 </section>
@@ -228,6 +237,8 @@
     </div>
     <!--/ Abstract. -->
 
+
+
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -241,25 +252,138 @@
       </div>
     </div>
     <!--/ Paper video. -->
+
+    <!-- Hardware Image Section -->
+    <div class="columns is-centered" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <div class="column is-half">
+        <img src="./static/images/hardware.png" alt="Hardware Setup" style="width: 100%;">
+      </div>
+      <div class="column is-half">
+        <div class="content" style="display: flex; align-items: center; height: 100%;">
+          <p>
+            The ALOHA Lightning handles and camera mount are 3d printed. The lightweight setup is easy to move around and set up in different environments, and enables more sensory feedback during data collection.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Hardware Image Section -->
   </div>
 </section>
 
 
+
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container is-fullhd">
+
+    <!-- Image and Caption Section -->
+    <div class="columns is-centered" style="margin-bottom: 3rem;">
+      <div class="column is-half">
+        <!-- Images Column -->
+        <div class="content">
+          <div style="margin-bottom: 2rem;">
+            <img src="./static/images/aloha.png" alt="ALOHA Setup" style="width: 100%;">
+          </div>
+          <div>
+            <img src="./static/images/user_study.png" alt="User Study Results" style="width: 100%;">
+          </div>
+        </div>
+      </div>
+      <div class="column is-half">
+        <!-- Text Captions Column -->
+        <div class="content">
+          <div style="margin-bottom: 2rem;">
+            <h3 class="title is-4">Puppeteering Setup</h3>
+            <p>
+              We compare ALOHA Lightning to a teleoperated puppeteering system where a human operator controls the robot using a pair of hand-held controllers. The puppeteering system is capable of precision motion, but requires extensive operator training and is very difficult to use at high speeds.
+            </p>
+          </div>
+          <div style="margin-top: 20rem;">
+            <h3 class="title is-4">User Study Results</h3>
+            <p>
+              A user study where seven users, all with little to no prior teleoperation experience, were asked to perform the battery insertion task using both ALOHA Lightning and the puppeteering system. ALOHA Lightning enabled all users to collection demonstrations at high speeds, while the puppeteering system resulted in lower success rates and slower execution times.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Image and Caption Section -->
+
+    <!-- Section Header -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Puppeteering Speed-up Experiment</h2>
+        <div class="content has-text-justified">
+          <p>
+            To achieve high speed inference, we attempt to speed up the puppeteering system in two ways: by doubling the control frequency from 50hz to 100hz, and by skipping every other action.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Section Header -->
+
+    <!-- Puppeteering Experiment Carousel -->
+    <div class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div id="puppeteering-carousel" class="carousel results-carousel">
+            <div class="item item-aloha_base">
+              <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/aloha_base.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-double-time">
+              <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/double_time.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-skipping">
+              <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/skipping.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Comparison of puppeteering system performance at different speeds: 50Hz baseline, 100Hz frequency doubling, and action skipping approaches from left to right respectively. The double-frequency approach suffers from jerky motion causing imprecisions, and the skipping approach suffers from missing critical actions.
+          </h2>
+        </div>
+      </div>
+    </div>
+    <!--/ Puppeteering Experiment Carousel -->
+
+    <!-- Puppet Image Section -->
+    <div class="columns is-centered has-text-centered" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <div class="column is-max-desktop">
+        <img src="./static/images/puppet.png" alt="Puppet System" style="width: 100%;">
+        <p class="has-text-centered" style="margin-top: 1rem;">
+          Alternative speed-up approaches on the puppeteering system result in significant performance degradation.
+        </p>
+      </div>
+    </div>
+    <!--/ Puppet Image Section -->
+
+    
+    
+    <!-- Section Header -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Visual Alignment</h2>
+        <div class="content has-text-justified">
+          <p>
+            In order to close the embodiment gap between collection and deployment time, we mask out hands using the relative, calibrated end effector positions. Below, we show the overhead camera view of a typical training data episode for the battery insertion task under thre different conditions.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Section Header -->
 
     <div class="columns is-centered">
 
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
+          <h2 class="title is-3">Base Overhead</h2>
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
+            <source src="./static/videos/base.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -268,121 +392,112 @@
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
+        <div class="content">
+          <h2 class="title is-3">Inpainted Overhead</h2>
+          <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/inpaint.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <!--/ Re-rendering. -->
+      </div>
+      <!--/ Matting. -->
 
+      <!-- Third Video. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Our Masking Overhead</h2>
+          <video id="demo-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ours.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Third Video. -->
+
+    </div>
+    <!--/ Matting. -->
+
+    <!-- Additional Image Section -->
+    <div class="columns is-centered has-text-centered" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <div class="column is-max-desktop">
+        <img src="./static/images/masking_table.png" alt="Results" style="width: 100%;">
+        <p class="has-text-centered" style="margin-top: 1rem;">
+          Our masking strategy almost uniformly beats non-masked and diffusion inpainted
+in success rates, enabling precise tasks such as battery insertion. Diffusion inpainting suffers from artifacts and inconsistencies, causing reduced performance.
+        </p>
       </div>
     </div>
-    <!--/ Animation. -->
+    <!--/ Additional Image Section -->
 
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
+    
+<!-- Section Header -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Test-Time Smoothing</h2>
         <div class="content has-text-justified">
           <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+            To account for increased jerky behavior at chunk boundaries introduced by high speed inference, we introduce test-time smoothing. 
           </p>
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
-
+    <!--/ Section Header -->
+   
+    <!-- Hardware Image Section -->
+    <div class="columns is-centered" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <div class="column is-half">
+        <img src="./static/images/smoothing.png" alt="Smoothing Setup" style="width: 100%;">
+      </div>
+      <div class="column is-half">
+        <div class="content" style="display: flex; align-items: center; height: 100%;">
+          <p>
+            Test-time smoothing is a light, easily adaptable approach where the user may specify the size of the smoothing window, as well as the degree of the smoothing via the sigmoid coefficient. This alleviates the discontinuities at chunk boundaries. For details, check out the paper.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Hardware Image Section -->
   </div>
 </section>
 
+<!-- Smoothing Experiment Carousel -->
+    <div class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div id="smoothing-carousel" class="carousel results-carousel">
+            <div class="item item-unsmoothed">
+              <video poster="" id="table_unsmooth" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/table_unsmooth.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-smoothed">
+              <video poster="" id="table" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/table.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+      <h2 class="subtitle has-text-centered">
+        Comparison of before (left) and after (right) test-time smoothing. Note the increased jerkiness of the unsmoothed version at chunk boundaries.
+      </h2>
+    </div>
+    <!--/ Smoothing Experiment Carousel -->
 
-<section class="section" id="BibTeX">
+      <!-- Additional Image Section -->
+      <div class="columns is-centered has-text-centered" style="margin-top: 3rem; margin-bottom: 3rem;">
+        <div class="column is-max-desktop">
+          <img src="./static/images/smoothing_table.png" alt="Results" style="width: 60%;">
+          <p class="has-text-centered" style="margin-top: 1rem;">
+            Test-time smoothing consistently improves success rates across all tasks, especially the more precise tasks such as battery insertion and folding shorts.
+          </p>
+        </div>
+      </div>
+      <!--/ Additional Image Section -->
+
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
@@ -392,19 +507,19 @@
   year      = {2021},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="./static/paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <!-- <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
         <i class="fab fa-github"></i>
-      </a>
+      </a> -->
     </div>
     <div class="columns is-centered">
       <div class="column is-8">
@@ -415,12 +530,8 @@
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
+            Website template credits <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a>
         </div>
       </div>
     </div>
